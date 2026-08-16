@@ -86,7 +86,7 @@ export const PROJECTS: Project[] = [
     },
     techStack: ['Python', 'Django', 'WebHooks', 'JavaScript (ES6)', 'HTML5/Bulma', 'SQLite/PostgreSQL'],
     liveDemoUrl: 'https://barber-shop-booking-six.vercel.app',
-    githubUrl: 'https://github.com/jasurbek-azizov/smart-booking-system',
+    githubUrl: 'https://github.com/FireBorn850/BarberShop-Booking',
     category: 'fullstack',
     featured: true,
     metrics: {
