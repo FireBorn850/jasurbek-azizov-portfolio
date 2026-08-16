@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
       es: 'Plataforma web para selección de horarios en tiempo real, confirmaciones automáticas por WhatsApp y gestión de personal.',
     },
     techStack: ['Python', 'Django', 'WebHooks', 'JavaScript (ES6)', 'HTML5/Bulma', 'SQLite/PostgreSQL'],
-    liveDemoUrl: 'https://example.com/demo-smart-booking',
+    liveDemoUrl: 'https://barber-shop-booking-six.vercel.app',
     githubUrl: 'https://github.com/jasurbek-azizov/smart-booking-system',
     category: 'fullstack',
     featured: true,
@@ -95,7 +95,7 @@ export const PROJECTS: Project[] = [
       ru: 'Снижает количество неявок на 80% за счет автоматических напоминаний',
       es: 'Elimina hasta el 80% de inasistencias gracias a los recordatorios automáticos',
     },
-    image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1200&auto=format&fit=crop',
+    image: '/photo_2026-08-16_13-17-45.jpg',
   },
   {
     id: 'restaurant-qr-menu',
