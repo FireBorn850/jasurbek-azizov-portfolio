@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
       ru: 'Сокращает время ответа на отзывы с 48 часов до 30 секунд',
       es: 'Reduce el tiempo de respuesta de 48 horas a menos de 30 segundos',
     },
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop',
+    image: '/photo_2026-09-03_14-56-28.jpg',
   },
   {
     id: 'smart-booking-system',
