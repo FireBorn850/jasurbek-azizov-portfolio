@@ -46,8 +46,8 @@ export const PROJECTS: Project[] = [
       es: 'Desarrollo de un sistema Django/Python con IA que analiza opiniones y genera borradores de respuesta personalizados en 1 clic según el tono del comercio.',
     },
     techStack: ['Python', 'Django', 'REST API', 'JavaScript', 'Tailwind CSS', 'Google Business API'],
-    liveDemoUrl: 'https://example.com/demo-review-responder',
-    githubUrl: 'https://github.com/jasurbek-azizov/ai-review-autoresponder',
+   liveDemoUrl: 'https://jasurchiking.pythonanywhere.com',
+   githubUrl: 'https://github.com/FireBorn850/Auto_Responder',  
     category: 'saas',
     featured: true,
     metrics: {
