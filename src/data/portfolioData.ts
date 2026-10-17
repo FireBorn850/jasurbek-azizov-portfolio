@@ -24,16 +24,16 @@ export const PROJECTS: Project[] = [
   {
     id: 'ai-review-responder',
     title: {
-      en: 'AI Google Review Auto-Responder',
-      fr: 'Répondeur Automatique IA Avis Google',
-      ru: 'AI Автоответчик на Отзывы Google',
-      es: 'Respondedor IA de Reseñas de Google',
+      en: 'Mehrly — AI Google Review Responder',
+      fr: 'Mehrly — Réponses IA aux Avis Google',
+      ru: 'Mehrly — ИИ-ответы на отзывы Google',
+      es: 'Mehrly — Respuestas IA a Reseñas de Google',
     },
     subtitle: {
-      en: 'Automated multi-lingual sentiment analysis & custom tone-of-voice response generator for Google Business profiles.',
-      fr: 'Analyse de sentiment multilingue et générateur de réponses personnalisées pour profils Google Business.',
-      ru: 'Мультиязычный анализ тональности и генератор персональных ответов для профилей Google Business.',
-      es: 'Análisis de sentimiento multilingüe y generador de respuestas personalizadas para perfiles de Google Business.',
+      en: 'Live SaaS for restaurants & cafés: drafts a personal, on-brand reply to every Google review in the guest’s language (FR · EN · DE · IT).',
+      fr: 'SaaS en ligne pour restaurants et cafés : rédige une réponse personnalisée à chaque avis Google, dans la langue du client (FR · EN · DE · IT).',
+      ru: 'Работающий SaaS для ресторанов и кафе: пишет персональный ответ на каждый отзыв Google на языке гостя (FR · EN · DE · IT).',
+      es: 'SaaS en producción para restaurantes y cafés: redacta una respuesta personalizada a cada reseña de Google en el idioma del cliente (FR · EN · DE · IT).',
     },
     problem: {
       en: 'Local business owners in Geneva & globally lose customer trust and local SEO ranking because they do not have time to craft personalized, polite replies in French, English, or German to dozens of weekly Google reviews.',
@@ -48,7 +48,7 @@ export const PROJECTS: Project[] = [
       es: 'Desarrollo de un sistema Django/Python con IA que analiza opiniones y genera borradores de respuesta personalizados en 1 clic según el tono del comercio.',
     },
     techStack: ['Python', 'Django', 'REST API', 'JavaScript', 'Tailwind CSS', 'Google Business API'],
-   liveDemoUrl: 'https://jasurchiking.pythonanywhere.com',
+    liveDemoUrl: 'https://mehrly.com',
    githubUrl: 'https://github.com/FireBorn850/Auto_Responder',  
     category: 'saas',
     featured: true,
@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
       ru: 'Сокращает время ответа на отзывы с 48 часов до 30 секунд',
       es: 'Reduce el tiempo de respuesta de 48 horas a menos de 30 segundos',
     },
-    image: '/photo_2026-09-03_14-56-28.jpg',
+    image: '/projects/mehrly.jpg',
   },
   {
     id: 'smart-booking-system',

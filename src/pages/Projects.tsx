@@ -18,7 +18,7 @@ export const ProjectsPage: React.FC = () => {
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       <SEOHelper
         title="Projects & SaaS Showcase | Jasurbek Azizov"
-        description="Explore SaaS products built by Jasurbek Azizov: AI Google Review Auto-Responder, Smart Booking Engine, and Restaurant QR Menu Suite."
+        description="Explore SaaS products built by Jasurbek Azizov: Mehrly (AI Google Review Responder), Smart Booking Engine, and Restaurant QR Menu Suite."
       />
 
       {/* Header */}
