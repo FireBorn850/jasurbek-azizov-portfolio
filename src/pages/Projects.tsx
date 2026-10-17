@@ -18,7 +18,7 @@ export const ProjectsPage: React.FC = () => {
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       <SEOHelper
         title="Projects & SaaS Showcase | Jasurbek Azizov"
-        description="Explore SaaS products built by Jasurbek Azizov: Mehrly (AI Google Review Responder), Smart Booking Engine, and Restaurant QR Menu Suite."
+        description="Explore SaaS products built by Jasurbek Azizov: Mehrly (AI Google Review Responder) and the Smart Booking & Client Scheduling Engine."
       />
 
       {/* Header */}
@@ -74,21 +74,10 @@ export const ProjectsPage: React.FC = () => {
         >
           {t.projects.filterFullstack}
         </button>
-
-        <button
-          onClick={() => setFilter('automation')}
-          className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
-            filter === 'automation'
-              ? 'bg-cyan-500 text-slate-950 font-bold shadow-lg shadow-cyan-500/20'
-              : 'bg-slate-900 light:bg-white text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-200 hover:border-slate-700 light:hover:border-slate-300'
-          }`}
-        >
-          {t.projects.filterAutomation}
-        </button>
       </div>
 
       {/* Grid of Projects */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {filteredProjects.map((proj) => (
           <ProjectCard key={proj.id} project={proj} />
         ))}

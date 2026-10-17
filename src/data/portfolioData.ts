@@ -99,46 +99,6 @@ export const PROJECTS: Project[] = [
     },
     image: '/photo_2026-08-16_13-17-45.jpg',
   },
-  {
-    id: 'restaurant-qr-menu',
-    title: {
-      en: 'Restaurant Web Presence & QR Menu Suite',
-      fr: 'Site Web Restauration & Suite Menu QR',
-      ru: 'Веб-Сайт для Ресторана и Система QR-Меню',
-      es: 'Sitio Web para Restaurantes y Menú QR',
-    },
-    subtitle: {
-      en: 'Instant mobile-optimized digital menu with table-side feedback filter that turns happy diners into 5-star Google Reviews.',
-      fr: 'Menu numérique mobile ultra-rapide avec filtre de satisfaction redirigeant les clients ravis vers Google Reviews.',
-      ru: 'Мобильное цифровое меню с фильтром отзывов, превращающее довольных гостей в 5-звездочные оценки на Google Картах.',
-      es: 'Menú digital ultra-rápido para móviles con filtro de satisfacción que redirige a reseñas de 5 estrellas en Google.',
-    },
-    problem: {
-      en: 'Traditional printed menus are expensive to update, non-multilingual, and fail to capture immediate positive guest sentiment before customers leave the table.',
-      fr: 'Les menus papier sont coûteux à modifier, unilingues et ne permettent pas de capturer les avis positifs au moment du repas.',
-      ru: 'Бумажные меню дорого обновлять, они не имеют мультиязычности и не собирают обратную связь прямо за столом.',
-      es: 'Los menús impresos son costosos de actualizar, no son multilingües y no capturan la opinión positiva en el momento.',
-    },
-    solution: {
-      en: 'Built a lightweight, sub-second load time QR menu portal with French/English/Russian language toggles, item filtering, and an automated prompt asking satisfied diners to post a 5-star review.',
-      fr: 'Création d’un portail menu QR ultra-rapide multilingue (FR/EN/RU) incitant intelligemment les clients satisfaits à laisser un avis Google.',
-      ru: 'Разработан цифровой QR-портал с переключением языков (FR/EN/RU) и стимулированием довольных гостей оставить отзыв в Google.',
-      es: 'Portal de menú QR ultra-rápido multilingüe (FR/EN/RU) que invita a clientes satisfechos a dejar su reseña en Google.',
-    },
-    techStack: ['HTML5', 'Tailwind CSS', 'Vanilla JS', 'Python', 'QR Engine'],
-    // TODO: add the real demo + repo links when they are live (buttons stay hidden while empty)
-    liveDemoUrl: '',
-    githubUrl: '',
-    category: 'automation',
-    featured: true,
-    metrics: {
-      en: 'Increases 5-star Google reviews by 3.5x for dining establishments',
-      fr: 'Multiplie par 3,5 le nombre d’avis 5 étoiles Google pour les restaurants',
-      ru: 'Увеличивает количество 5-звездочных отзывов на Google Maps в 3.5 раза',
-      es: 'Aumenta x3.5 las reseñas de 5 estrellas en Google para restaurantes',
-    },
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200&auto=format&fit=crop',
-  },
 ];
 
 export const EXPERIENCES: Experience[] = [

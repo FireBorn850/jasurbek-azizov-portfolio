@@ -117,7 +117,7 @@ export const Home: React.FC = () => {
       {/* Snapshot Stats Counters */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <StatCounter value={3} suffix=" SaaS" label={t.home.stats.saas} />
+          <StatCounter value={2} suffix=" SaaS" label={t.home.stats.saas} />
           <StatCounter value={6} label={t.home.stats.languages} />
           <StatCounter value={9} suffix=" Mo" label={t.home.stats.cert} />
           <StatCounter value={2026} prefix="May " label={t.home.stats.investor} animate={false} />
@@ -144,7 +144,7 @@ export const Home: React.FC = () => {
           </NavLink>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {PROJECTS.map((proj) => (
             <div
               key={proj.id}
