@@ -4,6 +4,7 @@ import { ArrowRight, Code2, Briefcase, TrendingUp, Award, Mail, Sparkles, UserCh
 import { SEOHelper } from '../components/SEOHelper';
 import { StatCounter } from '../components/StatCounter';
 import { VCFDownloadButton } from '../components/VCFDownloadButton';
+import { DownloadCVButton } from '../components/DownloadCVButton';
 import { PERSONAL_INFO, PROJECTS } from '../data/portfolioData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -14,7 +15,7 @@ export const Home: React.FC = () => {
     <div className="relative z-10 space-y-24 pb-20">
       <SEOHelper
         title="Jasurbek Azizov | Entrepreneur, Full-Stack Builder & Global Business Student"
-        description="Global portfolio of Jasurbek Azizov — B.A. Economics student at Webster University Geneva and Full-Stack Developer specializing in SaaS automation and digital tools."
+        description="Global portfolio of Jasurbek Azizov — B.A. Economics & International Relations student at Webster University (Tashkent) and Full-Stack Developer building SaaS and digital tools for businesses worldwide."
       />
 
       {/* Hero Section */}
@@ -55,12 +56,14 @@ export const Home: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/geneva-card"
+              to="/services"
               className="px-5 py-3.5 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/10 light:bg-emerald-50 border border-emerald-500/30 text-emerald-400 dark:text-emerald-400 light:text-emerald-700 font-bold text-sm flex items-center gap-2 hover:bg-emerald-500/20 transition-all"
             >
               <QrCode className="w-4 h-4 text-emerald-400 light:text-emerald-700" />
               <span>{t.home.ctaGeneva}</span>
             </NavLink>
+
+            <DownloadCVButton />
 
             <VCFDownloadButton variant="outline" />
           </div>

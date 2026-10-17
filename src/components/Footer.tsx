@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-slate-400 dark:text-slate-400 light:text-slate-600 leading-relaxed max-w-md">
-              Full-Stack Developer & Economics student at Webster University Geneva. Building production web systems, AI review platforms, and digital tools for business growth.
+              Full-Stack Developer & Economics student at Webster University (Tashkent). Building production web systems, AI review platforms, and digital tools for businesses worldwide.
             </p>
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">
@@ -112,14 +112,14 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Business & Geneva Links */}
+          {/* Business Links */}
           <div>
             <h4 className="text-xs font-bold text-slate-200 dark:text-slate-200 light:text-slate-900 uppercase tracking-wider mb-3">
               Specialized Portals
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <NavLink to="/geneva-card" className="hover:text-emerald-400 light:hover:text-emerald-600 text-emerald-400/90 light:text-emerald-700 font-medium transition-colors">
+                <NavLink to="/services" className="hover:text-emerald-400 light:hover:text-emerald-600 text-emerald-400/90 light:text-emerald-700 font-medium transition-colors">
                   {t.nav.genevaCard}
                 </NavLink>
               </li>
@@ -141,6 +141,16 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
+
+        {/* Personal motto */}
+        <figure className="py-8 text-center border-b border-slate-800/60 light:border-slate-200">
+          <blockquote className="text-lg sm:text-xl font-semibold italic text-slate-200 light:text-slate-800">
+            “Aspire to inspire before you expire.”
+          </blockquote>
+          <figcaption className="mt-2 text-xs font-medium tracking-wide text-cyan-400 light:text-cyan-700">
+            — Eugene Bell Jr.
+          </figcaption>
+        </figure>
 
         {/* Bottom copyright & back to top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">

@@ -21,13 +21,13 @@ VERSION:3.0
 N:Azizov;Jasurbek;;;
 FN:Jasurbek Azizov
 TITLE:${PERSONAL_INFO.title}
-ORG:Webster University Geneva / Freelance
+ORG:Webster University / Freelance
 TEL;TYPE=CELL,VOICE:${PERSONAL_INFO.phonePrimary}
 TEL;TYPE=WORK,VOICE:${PERSONAL_INFO.phoneSecondary}
 EMAIL;TYPE=INTERNET,PREF:${PERSONAL_INFO.emailPrimary}
 EMAIL;TYPE=INTERNET:${PERSONAL_INFO.emailSecondary}
 URL:https://www.jasurbekazizov.com
-NOTE:Full-Stack Developer & Global Business Student based in Geneva, Switzerland.
+NOTE:Full-Stack Developer & Global Business Student based in Tashkent, Uzbekistan. Working with clients worldwide.
 X-SOCIALPROFILE;type=linkedin:${PERSONAL_INFO.linkedinUrl}
 X-SOCIALPROFILE;type=telegram:${PERSONAL_INFO.telegramUrl}
 X-SOCIALPROFILE;type=instagram:${PERSONAL_INFO.instagramUrl}

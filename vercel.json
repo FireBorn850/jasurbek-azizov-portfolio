@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/:page(about|experience|projects|investing|certificates|contact|geneva-card)", "destination": "/index.html" }
+    { "source": "/:page(about|experience|projects|investing|certificates|contact|services|geneva-card)", "destination": "/index.html" }
   ]
 }

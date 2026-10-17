@@ -75,6 +75,10 @@ export const SEOHelper: React.FC<SEOHelperProps> = ({
         alumniOf: [
           {
             '@type': 'CollegeOrUniversity',
+            name: 'Webster University Tashkent',
+          },
+          {
+            '@type': 'CollegeOrUniversity',
             name: 'Webster University Geneva',
             sameAs: 'https://www.webster.ch',
           },
@@ -92,8 +96,8 @@ export const SEOHelper: React.FC<SEOHelperProps> = ({
         knowsLanguage: ['Uzbek', 'Russian', 'English', 'Tajik', 'Spanish', 'French'],
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Geneva',
-          addressCountry: 'Switzerland',
+          addressLocality: 'Tashkent',
+          addressCountry: 'Uzbekistan',
         },
       };
       script.textContent = JSON.stringify(schemaData);

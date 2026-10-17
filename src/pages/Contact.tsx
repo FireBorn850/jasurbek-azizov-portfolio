@@ -17,16 +17,47 @@ export const ContactPage: React.FC = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
+
+  // Messages are delivered to the inbox via FormSubmit (no backend needed).
+  const FORM_ENDPOINT = `https://formsubmit.co/ajax/${PERSONAL_INFO.emailPrimary}`;
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Create mailto link as fallback
-    const mailtoSubject = encodeURIComponent(`[Portfolio Contact] ${formData.subject || 'Inquiry'}`);
-    const mailtoBody = encodeURIComponent(
-      `Name: ${formData.name}\nBusiness: ${formData.businessName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    window.location.href = `mailto:${PERSONAL_INFO.emailPrimary}?subject=${mailtoSubject}&body=${mailtoBody}`;
+    setSending(true);
+    setSendError(false);
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          business: formData.businessName || '-',
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _subject: `[Portfolio] ${formData.subject || 'New message'} — ${formData.name}`,
+          _replyto: formData.email,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success === false || data.success === 'false') throw new Error('send failed');
+      setSubmitted(true);
+    } catch {
+      setSendError(true);
+    } finally {
+      setSending(false);
+    }
   };
+
+  const mailtoFallback = `mailto:${PERSONAL_INFO.emailPrimary}?subject=${encodeURIComponent(
+    `[Portfolio Contact] ${formData.subject || 'Inquiry'}`
+  )}&body=${encodeURIComponent(
+    `Name: ${formData.name}\nBusiness: ${formData.businessName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+  )}`;
 
   // QR code is generated in the browser (no third-party service) and always points at the live domain
   const qrValue = SITE_URL;
@@ -118,7 +149,7 @@ export const ContactPage: React.FC = () => {
               <CheckCircle2 className="w-10 h-10 text-emerald-400 light:text-emerald-700 mx-auto" />
               <h3 className="text-lg font-bold">{t.contact.successMsg}</h3>
               <p className="text-xs text-emerald-200/80 light:text-emerald-800">
-                Your email client has been opened with your pre-filled message.
+                I’ll get back to you within 24 hours.
               </p>
             </div>
           ) : (
@@ -147,7 +178,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.businessName}
                     onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-slate-950/80 dark:bg-slate-950/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-100 dark:text-slate-100 light:text-slate-900 focus:outline-none focus:border-cyan-500 text-xs"
-                    placeholder="e.g. Geneva Bistro"
+                    placeholder="e.g. Silk Road Café"
                   />
                 </div>
               </div>
@@ -196,12 +227,23 @@ export const ContactPage: React.FC = () => {
                 />
               </div>
 
+              {sendError && (
+                <p className="text-xs text-rose-400 light:text-rose-700">
+                  Sorry, the message couldn’t be sent right now.{' '}
+                  <a href={mailtoFallback} className="underline font-bold">
+                    Send it by email instead
+                  </a>
+                  .
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-cyan-500/20 cursor-pointer"
+                disabled={sending}
+                className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 disabled:opacity-60 disabled:cursor-wait text-slate-950 font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-lg shadow-cyan-500/20 cursor-pointer"
               >
-                <Send className="w-4 h-4" />
-                <span>{t.contact.sendBtn}</span>
+                <Send className={`w-4 h-4 ${sending ? 'animate-pulse' : ''}`} />
+                <span>{sending ? '…' : t.contact.sendBtn}</span>
               </button>
             </form>
           )}

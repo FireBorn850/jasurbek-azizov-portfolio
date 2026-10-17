@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { ParticleCanvas } from './components/ParticleCanvas';
@@ -15,7 +15,7 @@ const ProjectsPage = lazy(() => import('./pages/Projects').then((m) => ({ defaul
 const InvestingPage = lazy(() => import('./pages/Investing').then((m) => ({ default: m.InvestingPage })));
 const CertificatesPage = lazy(() => import('./pages/Certificates').then((m) => ({ default: m.CertificatesPage })));
 const ContactPage = lazy(() => import('./pages/Contact').then((m) => ({ default: m.ContactPage })));
-const GenevaCardPage = lazy(() => import('./pages/GenevaCard').then((m) => ({ default: m.GenevaCardPage })));
+const ServicesPage = lazy(() => import('./pages/Services').then((m) => ({ default: m.ServicesPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFoundPage })));
 
 // Automatically scroll to top on route change
@@ -53,7 +53,9 @@ export default function App() {
                 <Route path="/investing" element={<InvestingPage />} />
                 <Route path="/certificates" element={<CertificatesPage />} />
                 <Route path="/contact" element={<ContactPage />} />
-                <Route path="/geneva-card" element={<GenevaCardPage />} />
+                <Route path="/services" element={<ServicesPage />} />
+                {/* old address (printed QR codes) keeps working */}
+                <Route path="/geneva-card" element={<Navigate to="/services" replace />} />
                 {/* Unknown URLs get a real "not found" page */}
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>

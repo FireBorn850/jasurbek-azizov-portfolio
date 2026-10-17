@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, GraduationCap, Award, Trophy, Music, Sparkles, BookOpen, ShieldCheck } from 'lucide-react';
 import { SEOHelper } from '../components/SEOHelper';
+import { DownloadCVButton } from '../components/DownloadCVButton';
 import { LANGUAGES_SPOKEN, PERSONAL_HIGHLIGHTS, PERSONAL_INFO } from '../data/portfolioData';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -11,7 +12,7 @@ export const About: React.FC = () => {
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       <SEOHelper
         title="About Jasurbek Azizov | Economics & Full-Stack Development"
-        description="Learn about Jasurbek Azizov: Webster University Geneva economics student, certified Python/Django developer, multilingual communicator, chess medalist, and violinist."
+        description="Learn about Jasurbek Azizov: Webster University economics & international relations student (Tashkent campus, Geneva exchange), certified Python/Django developer, multilingual communicator, chess medalist, and violinist."
       />
 
       {/* Page Header */}
@@ -42,6 +43,10 @@ export const About: React.FC = () => {
             <p className="text-sm text-slate-300 dark:text-slate-300 light:text-slate-700 leading-relaxed">
               {t.about.bioParagraph2}
             </p>
+
+            <div className="pt-1">
+              <DownloadCVButton className="w-fit" />
+            </div>
 
             {/* Academic Credibility & References Banner */}
             <div className="mt-6 pt-6 border-t border-slate-800/80 dark:border-slate-800/80 light:border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-slate-950/40 light:bg-slate-50 p-4 rounded-xl border border-slate-800/60">

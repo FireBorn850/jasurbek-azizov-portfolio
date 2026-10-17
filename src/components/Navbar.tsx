@@ -20,7 +20,7 @@ export const Navbar: React.FC = () => {
     { path: '/investing', label: t.nav.investing, icon: TrendingUp },
     { path: '/certificates', label: t.nav.certificates, icon: Award },
     { path: '/contact', label: t.nav.contact, icon: Mail },
-    { path: '/geneva-card', label: t.nav.genevaCard, icon: QrCode, badge: 'Geneva' },
+    { path: '/services', label: t.nav.genevaCard, icon: QrCode, badge: 'Worldwide' },
   ];
 
   const languages: Array<{ code: Language; label: string; flag: string }> = [
