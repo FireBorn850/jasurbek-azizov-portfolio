@@ -6,6 +6,8 @@ interface StatCounterProps {
   suffix?: string;
   label: string;
   duration?: number;
+  /** set to false for values that shouldn't count up (e.g. a year) */
+  animate?: boolean;
 }
 
 export const StatCounter: React.FC<StatCounterProps> = ({
@@ -14,15 +16,16 @@ export const StatCounter: React.FC<StatCounterProps> = ({
   suffix = '',
   label,
   duration = 1500,
+  animate = true,
 }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(animate ? 0 : value);
   const [hasAnimated, setHasAnimated] = useState(false);
   const elementRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated) {
+        if (animate && entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
           let start = 0;
           const steps = 30;

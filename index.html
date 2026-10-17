@@ -1,12 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Jasurbek Azizov's Portfolio" />
+    <meta name="description" content="Jasurbek Azizov — Entrepreneur, Full-Stack Developer and Economics student building software that helps businesses grow." />
     <meta name="google-site-verification" content="vxXCL9yTfkfOTbdbhwjV_3mGyBq4Q-n8tE1hixQiAuo" />
-    <link rel="canonical" href="https://www.jasurbekazizov.com/" />
+    <meta name="theme-color" content="#020618" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>Jasurbek Azizov | Portfolio</title>
+    <!-- Apply the saved theme before the page paints, so light-mode visitors don't see a dark flash -->
+    <script>
+      try {
+        var t = localStorage.getItem('ja_portfolio_theme');
+        if (t === 'light') {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

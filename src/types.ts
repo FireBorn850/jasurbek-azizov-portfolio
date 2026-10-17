@@ -7,7 +7,7 @@ export interface Project {
   problem: Record<Language, string>;
   solution: Record<Language, string>;
   techStack: string[];
-  liveDemoUrl: string;
+  liveDemoUrl?: string; // leave empty to hide the Live Demo buttons
   githubUrl?: string;
   category: 'saas' | 'automation' | 'fullstack' | 'business';
   featured: boolean;

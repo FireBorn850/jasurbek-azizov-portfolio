@@ -26,7 +26,7 @@ TEL;TYPE=CELL,VOICE:${PERSONAL_INFO.phonePrimary}
 TEL;TYPE=WORK,VOICE:${PERSONAL_INFO.phoneSecondary}
 EMAIL;TYPE=INTERNET,PREF:${PERSONAL_INFO.emailPrimary}
 EMAIL;TYPE=INTERNET:${PERSONAL_INFO.emailSecondary}
-URL:https://jasurbekazizov.com
+URL:https://www.jasurbekazizov.com
 NOTE:Full-Stack Developer & Global Business Student based in Geneva, Switzerland.
 X-SOCIALPROFILE;type=linkedin:${PERSONAL_INFO.linkedinUrl}
 X-SOCIALPROFILE;type=telegram:${PERSONAL_INFO.telegramUrl}
@@ -52,9 +52,9 @@ END:VCARD`;
       case 'primary':
         return 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-lg shadow-cyan-500/20';
       case 'secondary':
-        return 'bg-slate-800 hover:bg-slate-700 text-cyan-400 border border-slate-700';
+        return 'bg-slate-800 light:bg-slate-100 hover:bg-slate-700 light:hover:bg-slate-200 text-cyan-400 light:text-cyan-700 border border-slate-700 light:border-slate-300';
       case 'outline':
-        return 'border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 dark:border-cyan-400/40';
+        return 'border border-cyan-500/50 text-cyan-400 light:text-cyan-700 hover:bg-cyan-500/10 dark:border-cyan-400/40';
       default:
         return 'bg-cyan-500 text-slate-950 font-semibold';
     }
@@ -68,7 +68,7 @@ END:VCARD`;
     >
       {downloaded ? (
         <>
-          <UserCheck className="w-4 h-4 text-emerald-400 animate-bounce" />
+          <UserCheck className="w-4 h-4 text-emerald-400 light:text-emerald-700 animate-bounce" />
           <span>Contact Card Downloaded!</span>
         </>
       ) : (

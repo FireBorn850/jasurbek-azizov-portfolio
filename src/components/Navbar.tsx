@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Moon, Sun, Globe, Menu, X, Briefcase, User, Code2, TrendingUp, Award, Mail, QrCode } from 'lucide-react';
+import { Moon, Sun, Globe, Menu, X, Briefcase, User, Home as HomeIcon, Code2, TrendingUp, Award, Mail, QrCode } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { Language } from '../types';
@@ -13,7 +13,7 @@ export const Navbar: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: t.nav.home, icon: User },
+    { path: '/', label: t.nav.home, icon: HomeIcon },
     { path: '/about', label: t.nav.about, icon: User },
     { path: '/experience', label: t.nav.experience, icon: Briefcase },
     { path: '/projects', label: t.nav.projects, icon: Code2 },
@@ -50,10 +50,10 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 text-base tracking-tight group-hover:text-cyan-400 transition-colors">
+            <span className="font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 text-base tracking-tight group-hover:text-cyan-400 light:group-hover:text-cyan-600 transition-colors">
               Jasurbek Azizov
             </span>
-            <span className="text-[11px] text-cyan-400/80 font-medium tracking-wide">
+            <span className="text-[11px] text-cyan-400/80 light:text-cyan-700 font-medium tracking-wide">
               Global Tech & Economics
             </span>
           </div>
@@ -71,13 +71,13 @@ export const Navbar: React.FC = () => {
                   `relative px-3 py-2 text-xs xl:text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1.5 ${
                     isActive
                       ? 'text-cyan-400 dark:text-cyan-400 light:text-cyan-600 font-semibold'
-                      : 'text-slate-300 dark:text-slate-300 light:text-slate-600 hover:text-cyan-400 dark:hover:text-cyan-400 light:hover:text-slate-900 hover:bg-slate-800/40'
+                      : 'text-slate-300 dark:text-slate-300 light:text-slate-600 hover:text-cyan-400 dark:hover:text-cyan-400 light:hover:text-slate-900 hover:bg-slate-800/40 light:hover:bg-slate-200'
                   }`
                 }
               >
                 <span>{item.label}</span>
                 {item.badge && (
-                  <span className="px-1.5 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                  <span className="px-1.5 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded-full bg-emerald-500/20 text-emerald-400 light:text-emerald-700 border border-emerald-500/30">
                     {item.badge}
                   </span>
                 )}
@@ -90,15 +90,18 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Controls: Language + Theme Toggle */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           {/* Language Selector */}
           <div className="relative">
             <button
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-200 text-slate-200 dark:text-slate-200 light:text-slate-700 hover:border-cyan-500/50 transition-all cursor-pointer"
               title="Change Language"
+              aria-label="Change language"
+              aria-haspopup="menu"
+              aria-expanded={langDropdownOpen}
             >
-              <Globe className="w-3.5 h-3.5 text-cyan-400" />
+              <Globe className="w-3.5 h-3.5 text-cyan-400 light:text-cyan-700" />
               <span className="uppercase">{language}</span>
             </button>
 
@@ -109,7 +112,7 @@ export const Navbar: React.FC = () => {
                     key={lang.code}
                     onClick={() => handleLangSelect(lang.code)}
                     className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-slate-800 dark:hover:bg-slate-800 light:hover:bg-slate-100 transition-colors cursor-pointer ${
-                      language === lang.code ? 'text-cyan-400 font-bold' : 'text-slate-300 dark:text-slate-300 light:text-slate-700'
+                      language === lang.code ? 'text-cyan-400 light:text-cyan-700 font-bold' : 'text-slate-300 dark:text-slate-300 light:text-slate-700'
                     }`}
                   >
                     <span className="flex items-center gap-2">
@@ -126,24 +129,28 @@ export const Navbar: React.FC = () => {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-200 text-cyan-400 hover:text-cyan-300 hover:border-cyan-500/50 transition-all cursor-pointer"
+            className="p-2 rounded-lg bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-200 text-cyan-400 light:text-cyan-700 hover:text-cyan-300 light:hover:text-cyan-600 hover:border-cyan-500/50 transition-all cursor-pointer"
             title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
           >
-            {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-cyan-600" />}
+            {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400 light:text-amber-700" /> : <Moon className="w-4 h-4 text-cyan-600" />}
           </button>
         </div>
 
         {/* Mobile menu trigger */}
-        <div className="flex sm:hidden items-center gap-2">
+        <div className="flex lg:hidden items-center gap-2">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400"
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="p-2 rounded-lg bg-slate-900 light:bg-white border border-slate-800 light:border-slate-200 text-cyan-400 light:text-cyan-700"
           >
-            {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-cyan-600" />}
+            {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400 light:text-amber-700" /> : <Moon className="w-4 h-4 text-cyan-600" />}
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-200"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+            className="p-2 rounded-lg bg-slate-900 light:bg-white border border-slate-800 light:border-slate-200 text-slate-200 light:text-slate-900"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -152,11 +159,11 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-slate-950 dark:bg-slate-950 light:bg-white border-b border-slate-800 px-4 pt-3 pb-6 space-y-2 animate-in slide-in-from-top duration-300">
+        <div className="lg:hidden bg-slate-950 dark:bg-slate-950 light:bg-white border-b border-slate-800 light:border-slate-200 px-4 pt-3 pb-6 space-y-2 animate-in slide-in-from-top duration-300">
           {/* Mobile Language Bar */}
           <div className="flex items-center justify-between pb-3 mb-2 border-b border-slate-800 dark:border-slate-800 light:border-slate-200">
-            <span className="text-xs font-medium text-slate-400 flex items-center gap-1">
-              <Globe className="w-3.5 h-3.5 text-cyan-400" /> Select Language:
+            <span className="text-xs font-medium text-slate-400 light:text-slate-600 flex items-center gap-1">
+              <Globe className="w-3.5 h-3.5 text-cyan-400 light:text-cyan-700" /> Select Language:
             </span>
             <div className="flex gap-1">
               {languages.map((lang) => (
@@ -166,7 +173,7 @@ export const Navbar: React.FC = () => {
                   className={`px-2 py-1 rounded text-xs font-bold ${
                     language === lang.code
                       ? 'bg-cyan-500 text-slate-950'
-                      : 'bg-slate-900 text-slate-300 border border-slate-800'
+                      : 'bg-slate-900 light:bg-white text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-200'
                   }`}
                 >
                   {lang.code.toUpperCase()}
@@ -187,12 +194,12 @@ export const Navbar: React.FC = () => {
                   className={({ isActive }) =>
                     `flex items-center gap-2 p-2.5 rounded-xl text-xs font-medium ${
                       isActive
-                        ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/30'
-                        : 'text-slate-300 hover:bg-slate-900'
+                        ? 'bg-cyan-500/10 text-cyan-400 light:text-cyan-700 border border-cyan-500/30'
+                        : 'text-slate-300 light:text-slate-700 hover:bg-slate-900 light:hover:bg-white'
                     }`
                   }
                 >
-                  <Icon className="w-4 h-4 text-cyan-400" />
+                  <Icon className="w-4 h-4 text-cyan-400 light:text-cyan-700" />
                   <span>{item.label}</span>
                 </NavLink>
               );

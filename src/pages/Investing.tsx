@@ -17,7 +17,7 @@ export const InvestingPage: React.FC = () => {
 
       {/* Header */}
       <div className="space-y-3 max-w-3xl">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 light:text-emerald-700 text-xs font-bold uppercase tracking-wider">
           <TrendingUp className="w-3.5 h-3.5" />
           <span>Capital Allocation & Financial Literacy</span>
         </div>
@@ -30,11 +30,11 @@ export const InvestingPage: React.FC = () => {
       </div>
 
       {/* Sharia Compliance Notice Banner */}
-      <div className="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-start gap-4 text-xs text-emerald-300 leading-relaxed">
-        <ShieldCheck className="w-6 h-6 text-emerald-400 shrink-0 mt-0.5" />
+      <div className="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-start gap-4 text-xs text-emerald-300 light:text-emerald-700 leading-relaxed">
+        <ShieldCheck className="w-6 h-6 text-emerald-400 light:text-emerald-700 shrink-0 mt-0.5" />
         <div className="space-y-1">
-          <h4 className="font-bold text-slate-100 text-sm">{t.investing.shariaNotice}</h4>
-          <p className="text-emerald-200/80">{t.investing.disclaimer}</p>
+          <h4 className="font-bold text-slate-100 light:text-slate-900 text-sm">{t.investing.shariaNotice}</h4>
+          <p className="text-emerald-200/80 light:text-emerald-800">{t.investing.disclaimer}</p>
         </div>
       </div>
 
@@ -42,14 +42,14 @@ export const InvestingPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Animated Rotating Orbit Donut Chart */}
         <div className="p-8 rounded-2xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-200 backdrop-blur-xl shadow-xl flex flex-col items-center justify-center space-y-4">
-          <div className="flex items-center gap-2 text-slate-100 font-bold text-lg">
-            <PieChartIcon className="w-5 h-5 text-cyan-400" />
+          <div className="flex items-center gap-2 text-slate-100 light:text-slate-900 font-bold text-lg">
+            <PieChartIcon className="w-5 h-5 text-cyan-400 light:text-cyan-700" />
             <span>{t.investing.breakdownTitle}</span>
           </div>
 
           <OrbitChart />
 
-          <p className="text-[11px] text-center text-slate-400 italic">
+          <p className="text-[11px] text-center text-slate-400 light:text-slate-600 italic">
             Continuous slow orbital rotation signals live portfolio tracking & asset balance.
           </p>
         </div>
@@ -64,16 +64,16 @@ export const InvestingPage: React.FC = () => {
           </p>
 
           <div className="space-y-3 pt-2">
-            <div className="flex items-center gap-2.5 text-xs text-slate-200">
-              <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+            <div className="flex items-center gap-2.5 text-xs text-slate-200 light:text-slate-900">
+              <CheckCircle2 className="w-4 h-4 text-cyan-400 light:text-cyan-700 shrink-0" />
               <span><strong>SPUS (55%)</strong> — S&P 500 Sharia Index tracking high-margin technology & healthcare giants.</span>
             </div>
-            <div className="flex items-center gap-2.5 text-xs text-slate-200">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <div className="flex items-center gap-2.5 text-xs text-slate-200 light:text-slate-900">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 light:text-emerald-700 shrink-0" />
               <span><strong>SPRE (30%)</strong> — Global Sharia Real Estate Investment Trusts providing defensive dividend yields.</span>
             </div>
-            <div className="flex items-center gap-2.5 text-xs text-slate-200">
-              <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
+            <div className="flex items-center gap-2.5 text-xs text-slate-200 light:text-slate-900">
+              <CheckCircle2 className="w-4 h-4 text-indigo-400 light:text-indigo-700 shrink-0" />
               <span><strong>RELX (15%)</strong> — NYSE-listed global risk analytics & scientific decision platform.</span>
             </div>
           </div>
@@ -93,10 +93,10 @@ export const InvestingPage: React.FC = () => {
               className="p-6 rounded-2xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-200 backdrop-blur-xl shadow-xl space-y-4 hover:border-cyan-500/50 transition-all group"
             >
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-black font-mono text-cyan-400 group-hover:scale-105 transition-transform">
+                <span className="text-2xl font-black font-mono text-cyan-400 light:text-cyan-700 group-hover:scale-105 transition-transform">
                   {inv.ticker}
                 </span>
-                <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 light:text-emerald-700 border border-emerald-500/30">
                   {inv.allocationPercent}% Weight
                 </span>
               </div>
@@ -105,7 +105,7 @@ export const InvestingPage: React.FC = () => {
                 <h4 className="text-sm font-bold text-slate-100 dark:text-slate-100 light:text-slate-900">
                   {inv.name}
                 </h4>
-                <p className="text-[11px] text-slate-400 font-mono mt-0.5">
+                <p className="text-[11px] text-slate-400 light:text-slate-600 font-mono mt-0.5">
                   Market: {inv.market} · Type: {inv.type}
                 </p>
               </div>
@@ -114,8 +114,8 @@ export const InvestingPage: React.FC = () => {
                 {inv.description[language]}
               </p>
 
-              <div className="pt-3 border-t border-slate-800/60 text-[11px] text-slate-400">
-                <span className="font-semibold text-slate-300">Top Holdings:</span> {inv.holdingsSummary}
+              <div className="pt-3 border-t border-slate-800/60 light:border-slate-200 text-[11px] text-slate-400 light:text-slate-600">
+                <span className="font-semibold text-slate-300 light:text-slate-700">Top Holdings:</span> {inv.holdingsSummary}
               </div>
             </div>
           ))}

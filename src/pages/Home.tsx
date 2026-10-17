@@ -50,7 +50,7 @@ export const Home: React.FC = () => {
               to="/contact"
               className="px-6 py-3.5 rounded-xl bg-slate-900 dark:bg-slate-900 light:bg-white text-slate-100 dark:text-slate-100 light:text-slate-800 border border-slate-700 dark:border-slate-700 light:border-slate-300 hover:border-cyan-500/50 font-bold text-sm flex items-center gap-2 transition-all duration-300"
             >
-              <Mail className="w-4 h-4 text-cyan-400" />
+              <Mail className="w-4 h-4 text-cyan-400 light:text-cyan-700" />
               <span>{t.home.ctaContact}</span>
             </NavLink>
 
@@ -58,7 +58,7 @@ export const Home: React.FC = () => {
               to="/geneva-card"
               className="px-5 py-3.5 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/10 light:bg-emerald-50 border border-emerald-500/30 text-emerald-400 dark:text-emerald-400 light:text-emerald-700 font-bold text-sm flex items-center gap-2 hover:bg-emerald-500/20 transition-all"
             >
-              <QrCode className="w-4 h-4 text-emerald-400" />
+              <QrCode className="w-4 h-4 text-emerald-400 light:text-emerald-700" />
               <span>{t.home.ctaGeneva}</span>
             </NavLink>
 
@@ -69,45 +69,45 @@ export const Home: React.FC = () => {
           <div className="pt-6 border-t border-slate-800/80 dark:border-slate-800/80 light:border-slate-200 flex flex-wrap items-center gap-6 text-xs text-slate-300 dark:text-slate-300 light:text-slate-600">
             <a
               href={`mailto:${PERSONAL_INFO.emailPrimary}`}
-              className="flex items-center gap-2 hover:text-cyan-400 transition-colors group"
+              className="flex items-center gap-2 hover:text-cyan-400 light:hover:text-cyan-600 transition-colors group"
             >
-              <Mail className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+              <Mail className="w-4 h-4 text-cyan-400 light:text-cyan-700 group-hover:scale-110 transition-transform" />
               <span>{PERSONAL_INFO.emailPrimary}</span>
             </a>
             <a
               href={PERSONAL_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-emerald-400 transition-colors group"
+              className="flex items-center gap-2 hover:text-emerald-400 light:hover:text-emerald-600 transition-colors group"
             >
-              <Send className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
+              <Send className="w-4 h-4 text-emerald-400 light:text-emerald-700 group-hover:scale-110 transition-transform" />
               <span>{PERSONAL_INFO.phonePrimary}</span>
             </a>
             <a
               href={PERSONAL_INFO.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-cyan-400 transition-colors group"
+              className="flex items-center gap-2 hover:text-cyan-400 light:hover:text-cyan-600 transition-colors group"
             >
-              <Linkedin className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+              <Linkedin className="w-4 h-4 text-cyan-400 light:text-cyan-700 group-hover:scale-110 transition-transform" />
               <span>LinkedIn</span>
             </a>
             <a
               href={PERSONAL_INFO.telegramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-cyan-400 transition-colors group"
+              className="flex items-center gap-2 hover:text-cyan-400 light:hover:text-cyan-600 transition-colors group"
             >
-              <Send className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+              <Send className="w-4 h-4 text-cyan-400 light:text-cyan-700 group-hover:scale-110 transition-transform" />
               <span>Telegram (@azizovj0704)</span>
             </a>
             <a
               href={PERSONAL_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-pink-400 transition-colors group"
+              className="flex items-center gap-2 hover:text-pink-400 light:hover:text-pink-600 transition-colors group"
             >
-              <Instagram className="w-4 h-4 text-pink-400 group-hover:scale-110 transition-transform" />
+              <Instagram className="w-4 h-4 text-pink-400 light:text-pink-700 group-hover:scale-110 transition-transform" />
               <span>Instagram</span>
             </a>
           </div>
@@ -120,7 +120,7 @@ export const Home: React.FC = () => {
           <StatCounter value={3} suffix=" SaaS" label={t.home.stats.saas} />
           <StatCounter value={6} label={t.home.stats.languages} />
           <StatCounter value={9} suffix=" Mo" label={t.home.stats.cert} />
-          <StatCounter value={2026} prefix="May " label={t.home.stats.investor} />
+          <StatCounter value={2026} prefix="May " label={t.home.stats.investor} animate={false} />
         </div>
       </section>
 
@@ -137,7 +137,7 @@ export const Home: React.FC = () => {
           </div>
           <NavLink
             to="/projects"
-            className="hidden sm:flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300"
+            className="hidden sm:flex items-center gap-1.5 text-xs font-bold text-cyan-400 light:text-cyan-700 hover:text-cyan-300 light:hover:text-cyan-600"
           >
             <span>{t.home.seeMore}</span>
             <ArrowRight className="w-4 h-4" />
@@ -151,10 +151,10 @@ export const Home: React.FC = () => {
               className="p-6 rounded-2xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-white border border-slate-800/80 dark:border-slate-800/80 light:border-slate-200 backdrop-blur-xl shadow-xl flex flex-col justify-between hover:border-cyan-500/40 transition-all group"
             >
               <div className="space-y-3">
-                <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase bg-cyan-500/20 text-cyan-300 light:text-cyan-700 border border-cyan-500/30">
                   {proj.category}
                 </span>
-                <h3 className="text-lg font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-lg font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 group-hover:text-cyan-400 light:group-hover:text-cyan-600 transition-colors">
                   {proj.title['en']}
                 </h3>
                 <p className="text-xs text-slate-400 dark:text-slate-400 light:text-slate-600 leading-relaxed line-clamp-2">
@@ -163,7 +163,7 @@ export const Home: React.FC = () => {
               </div>
               <NavLink
                 to="/projects"
-                className="mt-4 pt-3 border-t border-slate-800/60 text-xs font-bold text-cyan-400 flex items-center justify-between hover:text-cyan-300"
+                className="mt-4 pt-3 border-t border-slate-800/60 light:border-slate-200 text-xs font-bold text-cyan-400 light:text-cyan-700 flex items-center justify-between hover:text-cyan-300 light:hover:text-cyan-600"
               >
                 <span>View Full Product Architecture</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -185,18 +185,18 @@ export const Home: React.FC = () => {
             to="/about"
             className="p-6 rounded-2xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-cyan-500/50 transition-all space-y-4 group"
           >
-            <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 w-fit group-hover:scale-110 transition-transform">
+            <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 light:text-cyan-700 w-fit group-hover:scale-110 transition-transform">
               <UserCheck className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 group-hover:text-cyan-400 transition-colors">
+              <h3 className="text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 group-hover:text-cyan-400 light:group-hover:text-cyan-600 transition-colors">
                 {t.home.aboutPreviewTitle}
               </h3>
               <p className="mt-1 text-xs text-slate-400 dark:text-slate-400 light:text-slate-600 leading-relaxed">
                 {t.home.aboutPreviewDesc}
               </p>
             </div>
-            <div className="text-xs font-bold text-cyan-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+            <div className="text-xs font-bold text-cyan-400 light:text-cyan-700 flex items-center gap-1 group-hover:gap-2 transition-all">
               <span>{t.home.seeMore}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </div>
@@ -207,18 +207,18 @@ export const Home: React.FC = () => {
             to="/experience"
             className="p-6 rounded-2xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-cyan-500/50 transition-all space-y-4 group"
           >
-            <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 w-fit group-hover:scale-110 transition-transform">
+            <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 light:text-blue-700 w-fit group-hover:scale-110 transition-transform">
               <Briefcase className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 group-hover:text-blue-400 transition-colors">
+              <h3 className="text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 group-hover:text-blue-400 light:group-hover:text-blue-600 transition-colors">
                 {t.home.expPreviewTitle}
               </h3>
               <p className="mt-1 text-xs text-slate-400 dark:text-slate-400 light:text-slate-600 leading-relaxed">
                 {t.home.expPreviewDesc}
               </p>
             </div>
-            <div className="text-xs font-bold text-blue-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+            <div className="text-xs font-bold text-blue-400 light:text-blue-700 flex items-center gap-1 group-hover:gap-2 transition-all">
               <span>{t.home.seeMore}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </div>
@@ -229,18 +229,18 @@ export const Home: React.FC = () => {
             to="/investing"
             className="p-6 rounded-2xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-emerald-500/50 transition-all space-y-4 group"
           >
-            <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 w-fit group-hover:scale-110 transition-transform">
+            <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 light:text-emerald-700 w-fit group-hover:scale-110 transition-transform">
               <TrendingUp className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 group-hover:text-emerald-400 transition-colors">
+              <h3 className="text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 group-hover:text-emerald-400 light:group-hover:text-emerald-600 transition-colors">
                 {t.home.investPreviewTitle}
               </h3>
               <p className="mt-1 text-xs text-slate-400 dark:text-slate-400 light:text-slate-600 leading-relaxed">
                 {t.home.investPreviewDesc}
               </p>
             </div>
-            <div className="text-xs font-bold text-emerald-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+            <div className="text-xs font-bold text-emerald-400 light:text-emerald-700 flex items-center gap-1 group-hover:gap-2 transition-all">
               <span>{t.home.seeMore}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </div>
@@ -251,18 +251,18 @@ export const Home: React.FC = () => {
             to="/certificates"
             className="p-6 rounded-2xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-purple-500/50 transition-all space-y-4 group"
           >
-            <div className="p-3 rounded-xl bg-purple-500/10 text-purple-400 w-fit group-hover:scale-110 transition-transform">
+            <div className="p-3 rounded-xl bg-purple-500/10 text-purple-400 light:text-purple-700 w-fit group-hover:scale-110 transition-transform">
               <Award className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 group-hover:text-purple-400 transition-colors">
+              <h3 className="text-base font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 group-hover:text-purple-400 light:group-hover:text-purple-600 transition-colors">
                 {t.home.certPreviewTitle}
               </h3>
               <p className="mt-1 text-xs text-slate-400 dark:text-slate-400 light:text-slate-600 leading-relaxed">
                 {t.home.certPreviewDesc}
               </p>
             </div>
-            <div className="text-xs font-bold text-purple-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+            <div className="text-xs font-bold text-purple-400 light:text-purple-700 flex items-center gap-1 group-hover:gap-2 transition-all">
               <span>{t.home.seeMore}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </div>

@@ -12,15 +12,23 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(() => {
-    const saved = localStorage.getItem('ja_portfolio_lang');
-    if (saved && (saved === 'en' || saved === 'fr' || saved === 'ru' || saved === 'es')) {
-      return saved as Language;
+    try {
+      const saved = localStorage.getItem('ja_portfolio_lang');
+      if (saved && (saved === 'en' || saved === 'fr' || saved === 'ru' || saved === 'es')) {
+        return saved as Language;
+      }
+    } catch {
+      // storage blocked – use default
     }
     return 'en'; // English default
   });
 
   useEffect(() => {
-    localStorage.setItem('ja_portfolio_lang', language);
+    try {
+      localStorage.setItem('ja_portfolio_lang', language);
+    } catch {
+      // ignore
+    }
     document.documentElement.lang = language;
   }, [language]);
 

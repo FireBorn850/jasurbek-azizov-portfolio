@@ -1,11 +1,27 @@
 @import "tailwindcss";
 
+/* Theme variants: driven by the .dark / .light class that ThemeContext puts on <html>.
+   Tailwind v4 has no built-in `light:` variant and its `dark:` follows the OS by default,
+   so both are declared here to follow the site's own toggle. */
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
 @layer base {
   html {
     scroll-behavior: smooth;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   
+  html.dark {
+    color-scheme: dark;
+    background-color: #020618;
+  }
+
+  html.light {
+    color-scheme: light;
+    background-color: #f8fafc;
+  }
+
   body {
     overflow-x: hidden;
   }
@@ -27,6 +43,14 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #06b6d4;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
 }
 
 /* Glassmorphism helpers */

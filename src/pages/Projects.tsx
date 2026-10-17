@@ -23,7 +23,7 @@ export const ProjectsPage: React.FC = () => {
 
       {/* Header */}
       <div className="space-y-3 max-w-3xl">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 light:text-cyan-700 text-xs font-bold uppercase tracking-wider">
           <Code2 className="w-3.5 h-3.5" />
           <span>SaaS Software Showcase</span>
         </div>
@@ -36,9 +36,9 @@ export const ProjectsPage: React.FC = () => {
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-2 pb-2 border-b border-slate-800/80">
+      <div className="flex flex-wrap items-center gap-2 pb-2 border-b border-slate-800/80 light:border-slate-200">
         <div className="flex items-center gap-2 text-xs font-bold text-slate-500 mr-2">
-          <Filter className="w-4 h-4 text-cyan-400" />
+          <Filter className="w-4 h-4 text-cyan-400 light:text-cyan-700" />
           <span>Category:</span>
         </div>
 
@@ -47,7 +47,7 @@ export const ProjectsPage: React.FC = () => {
           className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
             filter === 'all'
               ? 'bg-cyan-500 text-slate-950 font-bold shadow-lg shadow-cyan-500/20'
-              : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+              : 'bg-slate-900 light:bg-white text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-200 hover:border-slate-700 light:hover:border-slate-300'
           }`}
         >
           {t.projects.filterAll}
@@ -58,7 +58,7 @@ export const ProjectsPage: React.FC = () => {
           className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
             filter === 'saas'
               ? 'bg-cyan-500 text-slate-950 font-bold shadow-lg shadow-cyan-500/20'
-              : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+              : 'bg-slate-900 light:bg-white text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-200 hover:border-slate-700 light:hover:border-slate-300'
           }`}
         >
           {t.projects.filterSaas}
@@ -69,7 +69,7 @@ export const ProjectsPage: React.FC = () => {
           className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
             filter === 'fullstack'
               ? 'bg-cyan-500 text-slate-950 font-bold shadow-lg shadow-cyan-500/20'
-              : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+              : 'bg-slate-900 light:bg-white text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-200 hover:border-slate-700 light:hover:border-slate-300'
           }`}
         >
           {t.projects.filterFullstack}
@@ -80,7 +80,7 @@ export const ProjectsPage: React.FC = () => {
           className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
             filter === 'automation'
               ? 'bg-cyan-500 text-slate-950 font-bold shadow-lg shadow-cyan-500/20'
-              : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+              : 'bg-slate-900 light:bg-white text-slate-300 light:text-slate-700 border border-slate-800 light:border-slate-200 hover:border-slate-700 light:hover:border-slate-300'
           }`}
         >
           {t.projects.filterAutomation}

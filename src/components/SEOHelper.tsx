@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { PERSONAL_INFO } from '../data/portfolioData';
+import { PERSONAL_INFO, SITE_URL } from '../data/portfolioData';
 
 interface SEOHelperProps {
   title: string;
@@ -16,11 +16,22 @@ export const SEOHelper: React.FC<SEOHelperProps> = ({
   type = 'website',
 }) => {
   const location = useLocation();
-  const currentUrl = `https://jasurbekazizov.com${location.pathname}`;
+  const path = location.pathname === '/' ? '/' : location.pathname.replace(/\/+$/, '');
+  const currentUrl = `${SITE_URL}${path}`;
 
   useEffect(() => {
     // 1. Set document title
-    document.title = `${title} | Jasurbek Azizov Portfolio`;
+    // (avoid repeating the name when the page title already contains it)
+    document.title = title.includes('Jasurbek Azizov') ? title : `${title} | Jasurbek Azizov`;
+
+    // 1b. Canonical URL for this exact page
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', currentUrl);
 
     // 2. Helper to set or create meta tag
     const setMetaTag = (nameAttr: string, attrValue: string, content: string) => {
@@ -58,7 +69,7 @@ export const SEOHelper: React.FC<SEOHelperProps> = ({
         '@type': 'Person',
         name: PERSONAL_INFO.name,
         jobTitle: PERSONAL_INFO.title,
-        url: 'https://jasurbekazizov.com',
+        url: SITE_URL,
         email: PERSONAL_INFO.emailPrimary,
         telephone: PERSONAL_INFO.phonePrimary,
         alumniOf: [

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
@@ -7,13 +7,16 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 
 import { Home } from './pages/Home';
-import { About } from './pages/About';
-import { ExperiencePage } from './pages/Experience';
-import { ProjectsPage } from './pages/Projects';
-import { InvestingPage } from './pages/Investing';
-import { CertificatesPage } from './pages/Certificates';
-import { ContactPage } from './pages/Contact';
-import { GenevaCardPage } from './pages/GenevaCard';
+
+// Pages other than Home are loaded on demand, so the first visit downloads less JavaScript
+const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })));
+const ExperiencePage = lazy(() => import('./pages/Experience').then((m) => ({ default: m.ExperiencePage })));
+const ProjectsPage = lazy(() => import('./pages/Projects').then((m) => ({ default: m.ProjectsPage })));
+const InvestingPage = lazy(() => import('./pages/Investing').then((m) => ({ default: m.InvestingPage })));
+const CertificatesPage = lazy(() => import('./pages/Certificates').then((m) => ({ default: m.CertificatesPage })));
+const ContactPage = lazy(() => import('./pages/Contact').then((m) => ({ default: m.ContactPage })));
+const GenevaCardPage = lazy(() => import('./pages/GenevaCard').then((m) => ({ default: m.GenevaCardPage })));
+const NotFoundPage = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFoundPage })));
 
 // Automatically scroll to top on route change
 const ScrollToTop: React.FC = () => {
@@ -41,6 +44,7 @@ export default function App() {
 
             {/* Main Page Content Container */}
             <main className="relative z-10 min-h-[calc(100vh-160px)]">
+              <Suspense fallback={<div className="min-h-[60vh]" />}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
@@ -50,9 +54,10 @@ export default function App() {
                 <Route path="/certificates" element={<CertificatesPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/geneva-card" element={<GenevaCardPage />} />
-                {/* Fallback redirect */}
-                <Route path="*" element={<Home />} />
+                {/* Unknown URLs get a real "not found" page */}
+                <Route path="*" element={<NotFoundPage />} />
               </Routes>
+              </Suspense>
             </main>
 
             {/* Footer */}

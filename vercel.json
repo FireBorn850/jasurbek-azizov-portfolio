@@ -1,8 +1,5 @@
 {
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/(about|experience|projects|investing|certificates|contact|geneva-card)/?", "destination": "/index.html" }
   ]
 }

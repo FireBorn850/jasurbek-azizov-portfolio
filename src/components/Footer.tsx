@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative z-10 border-t border-slate-800/80 dark:border-slate-800/80 light:border-slate-200 bg-slate-950 dark:bg-slate-950 light:bg-slate-100 text-slate-400 py-12 transition-colors duration-300">
+    <footer className="relative z-10 border-t border-slate-800/80 dark:border-slate-800/80 light:border-slate-200 bg-slate-950 dark:bg-slate-950 light:bg-slate-100 text-slate-400 light:text-slate-600 py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800/60 dark:border-slate-800/60 light:border-slate-200">
           {/* Brand & Mission */}
@@ -36,8 +36,9 @@ export const Footer: React.FC = () => {
                 href={PERSONAL_INFO.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all"
+                className="p-2 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 light:text-slate-700 hover:text-cyan-400 light:hover:text-cyan-600 hover:border-cyan-500/50 transition-all"
                 title="LinkedIn"
+                aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -45,8 +46,9 @@ export const Footer: React.FC = () => {
                 href={PERSONAL_INFO.telegramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all"
+                className="p-2 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 light:text-slate-700 hover:text-cyan-400 light:hover:text-cyan-600 hover:border-cyan-500/50 transition-all"
                 title="Telegram"
+                aria-label="Telegram"
               >
                 <Send className="w-4 h-4" />
               </a>
@@ -54,15 +56,17 @@ export const Footer: React.FC = () => {
                 href={PERSONAL_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all"
+                className="p-2 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 light:text-slate-700 hover:text-cyan-400 light:hover:text-cyan-600 hover:border-cyan-500/50 transition-all"
                 title="Instagram"
+                aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${PERSONAL_INFO.emailPrimary}`}
-                className="p-2 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all"
+                className="p-2 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 light:text-slate-700 hover:text-cyan-400 light:hover:text-cyan-600 hover:border-cyan-500/50 transition-all"
                 title="Email"
+                aria-label="Email"
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -70,8 +74,9 @@ export const Footer: React.FC = () => {
                 href={PERSONAL_INFO.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all"
+                className="p-2 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 light:text-slate-700 hover:text-cyan-400 light:hover:text-cyan-600 hover:border-cyan-500/50 transition-all"
                 title="GitHub"
+                aria-label="GitHub"
               >
                 <Github className="w-4 h-4" />
               </a>
@@ -85,22 +90,22 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <NavLink to="/about" className="hover:text-cyan-400 transition-colors">
+                <NavLink to="/about" className="hover:text-cyan-400 light:hover:text-cyan-600 transition-colors">
                   {t.nav.about}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/experience" className="hover:text-cyan-400 transition-colors">
+                <NavLink to="/experience" className="hover:text-cyan-400 light:hover:text-cyan-600 transition-colors">
                   {t.nav.experience}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/projects" className="hover:text-cyan-400 transition-colors">
+                <NavLink to="/projects" className="hover:text-cyan-400 light:hover:text-cyan-600 transition-colors">
                   {t.nav.projects}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/investing" className="hover:text-cyan-400 transition-colors">
+                <NavLink to="/investing" className="hover:text-cyan-400 light:hover:text-cyan-600 transition-colors">
                   {t.nav.investing}
                 </NavLink>
               </li>
@@ -114,22 +119,22 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <NavLink to="/geneva-card" className="hover:text-emerald-400 text-emerald-400/90 font-medium transition-colors">
+                <NavLink to="/geneva-card" className="hover:text-emerald-400 light:hover:text-emerald-600 text-emerald-400/90 light:text-emerald-700 font-medium transition-colors">
                   {t.nav.genevaCard}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/certificates" className="hover:text-cyan-400 transition-colors">
+                <NavLink to="/certificates" className="hover:text-cyan-400 light:hover:text-cyan-600 transition-colors">
                   {t.nav.certificates}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/contact" className="hover:text-cyan-400 transition-colors">
+                <NavLink to="/contact" className="hover:text-cyan-400 light:hover:text-cyan-600 transition-colors">
                   {t.nav.contact}
                 </NavLink>
               </li>
               <li>
-                <a href={PERSONAL_INFO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+                <a href={PERSONAL_INFO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 light:hover:text-cyan-600 transition-colors">
                   WhatsApp Direct
                 </a>
               </li>
@@ -140,15 +145,15 @@ export const Footer: React.FC = () => {
         {/* Bottom copyright & back to top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p>© {new Date().getFullYear()} Jasurbek Azizov. {t.common.allRightsReserved}</p>
-          <p className="flex items-center gap-1.5 text-slate-400">
+          <p className="flex items-center gap-1.5 text-slate-400 light:text-slate-600">
             <span>{t.common.builtBy}</span>
           </p>
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 hover:text-cyan-400 transition-all cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 text-slate-300 light:text-slate-700 hover:text-cyan-400 light:hover:text-cyan-600 transition-all cursor-pointer"
           >
             <span>{t.common.backToTop}</span>
-            <ArrowUp className="w-3.5 h-3.5 text-cyan-400" />
+            <ArrowUp className="w-3.5 h-3.5 text-cyan-400 light:text-cyan-700" />
           </button>
         </div>
       </div>

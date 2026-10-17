@@ -14,10 +14,10 @@ export const OrbitChart: React.FC = () => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="p-3 rounded-xl bg-slate-900 border border-slate-700 shadow-xl text-xs space-y-1">
-          <p className="font-bold text-cyan-400">{data.name}</p>
-          <p className="text-slate-300">{data.fullName}</p>
-          <p className="font-mono text-emerald-400 font-extrabold">{data.value}% Allocation</p>
+        <div className="p-3 rounded-xl bg-slate-900 light:bg-white border border-slate-700 light:border-slate-300 shadow-xl text-xs space-y-1">
+          <p className="font-bold text-cyan-400 light:text-cyan-700">{data.name}</p>
+          <p className="text-slate-300 light:text-slate-700">{data.fullName}</p>
+          <p className="font-mono text-emerald-400 light:text-emerald-700 font-extrabold">{data.value}% Allocation</p>
         </div>
       );
     }
@@ -32,9 +32,9 @@ export const OrbitChart: React.FC = () => {
 
       {/* Pulsing center node */}
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10">
-        <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">Sharia</span>
-        <span className="text-lg font-extrabold text-slate-100">100% Halal</span>
-        <span className="text-[10px] text-slate-400">Equity & REITs</span>
+        <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 light:text-cyan-700">Sharia</span>
+        <span className="text-lg font-extrabold text-slate-100 light:text-slate-900">100% Halal</span>
+        <span className="text-[10px] text-slate-400 light:text-slate-600">Equity & REITs</span>
       </div>
 
       <ResponsiveContainer width="100%" height="100%">

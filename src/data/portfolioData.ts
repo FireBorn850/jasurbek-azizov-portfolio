@@ -1,5 +1,7 @@
 import { Certificate, Experience, InvestmentPosition, LanguageSkill, PersonalHighlight, Project } from '../types';
 
+export const SITE_URL = 'https://www.jasurbekazizov.com';
+
 export const PERSONAL_INFO = {
   name: 'Jasurbek Azizov',
   title: 'Entrepreneur & Full-Stack Developer',
@@ -14,7 +16,7 @@ export const PERSONAL_INFO = {
   linkedinUrl: 'https://linkedin.com/in/jasurbek-azizov07',
   telegramUrl: 'https://t.me/azizovj0704',
   instagramUrl: 'https://instagram.com/azizovj0704',
-  githubUrl: 'https://github.com/jasurbek-azizov',
+  githubUrl: 'https://github.com/FireBorn850',
   investorSince: 'May 2026',
 };
 
@@ -124,8 +126,9 @@ export const PROJECTS: Project[] = [
       es: 'Portal de menú QR ultra-rápido multilingüe (FR/EN/RU) que invita a clientes satisfechos a dejar su reseña en Google.',
     },
     techStack: ['HTML5', 'Tailwind CSS', 'Vanilla JS', 'Python', 'QR Engine'],
-    liveDemoUrl: 'https://example.com/demo-qr-menu',
-    githubUrl: 'https://github.com/jasurbek-azizov/restaurant-qr-suite',
+    // TODO: add the real demo + repo links when they are live (buttons stay hidden while empty)
+    liveDemoUrl: '',
+    githubUrl: '',
     category: 'automation',
     featured: true,
     metrics: {
