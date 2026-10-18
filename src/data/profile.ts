@@ -90,6 +90,7 @@ export const PROJECTS: ProjectItem[] = [
     status: 'Live · early stage',
     url: 'https://mehrly.com',
     urlLabel: 'mehrly.com',
+    repo: 'https://github.com/FireBorn850/Auto_Responder',
     image: '/projects/mehrly.jpg',
   },
   {
@@ -107,8 +108,8 @@ export const PROJECTS: ProjectItem[] = [
   },
 ];
 
-export const CERTIFICATES = [
-  { title: 'Backend / Full-Stack Web Development — 9-month programme', issuer: 'Monday Training Center', date: 'Graduated', detail: 'HTML, CSS, Python, Django' },
+export const CERTIFICATES: Array<{ title: string; issuer: string; date: string; detail?: string; url?: string }> = [
+  { title: 'Fundamentals of Programming in Python & Django — 9-month course', issuer: 'Monday Labs Academy, Bukhara', date: 'Completed', detail: 'HTML, CSS, Python, Django', url: '/certificates/monday-python-django.pdf' },
   { title: 'Climate Change Negotiations and Health', issuer: 'UN CC:e-Learn (UNITAR / WHO / UNFCCC)', date: 'Sept 2024' },
   { title: 'Gender Equality and Human Rights in Climate Action and Renewable Energy', issuer: 'UN CC:e-Learn (UNITAR / UN Environment / UN Women)', date: 'Sept 2024' },
   { title: 'IELTS Academic — Overall Band 6.0', issuer: 'IELTS', date: '2023' },

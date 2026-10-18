@@ -328,7 +328,19 @@ export const OnePage: React.FC = () => {
                   {c.detail ? ` · ${c.detail}` : ''}
                 </p>
               </div>
-              <span className="text-xs font-mono text-slate-400 light:text-slate-600 shrink-0">{c.date}</span>
+              <span className="flex items-center gap-3 shrink-0">
+                <span className="text-xs font-mono text-slate-400 light:text-slate-600">{c.date}</span>
+                {c.url && (
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-bold text-cyan-400 light:text-cyan-700 hover:underline flex items-center gap-1"
+                  >
+                    View <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
+              </span>
             </li>
           ))}
         </ul>
