@@ -21,11 +21,7 @@ export const SiteHeader: React.FC = () => {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 light:bg-white/85 border-b border-slate-800/60 light:border-slate-200">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         <a href="/#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-emerald-400 p-[1px]">
-            <span className="w-full h-full rounded-[11px] bg-slate-950 flex items-center justify-center font-bold text-cyan-400 text-xs tracking-wider">
-              JA
-            </span>
-          </span>
+          <img src="/images/logo-96.png" alt="" width={36} height={36} className="w-9 h-9 rounded-full" />
           <span className="font-bold text-slate-100 light:text-slate-900">Jasurbek Azizov</span>
         </a>
 
