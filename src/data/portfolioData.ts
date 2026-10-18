@@ -4,7 +4,7 @@ export const SITE_URL = 'https://www.jasurbekazizov.com';
 
 export const PERSONAL_INFO = {
   name: 'Jasurbek Azizov',
-  title: 'Entrepreneur & Full-Stack Developer',
+  title: 'Economics & International Relations Student',
   location: 'Tashkent, Uzbekistan (from Bukhara)',
   university: 'Webster University (Tashkent Campus)',
   major: 'B.A. Economics & International Relations',

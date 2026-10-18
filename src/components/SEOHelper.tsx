@@ -72,7 +72,6 @@ export const SEOHelper: React.FC<SEOHelperProps> = ({
         url: SITE_URL,
         image: `${SITE_URL}/images/jasurbek-azizov.jpg`,
         email: PERSONAL_INFO.emailPrimary,
-        telephone: PERSONAL_INFO.phonePrimary,
         alumniOf: [
           {
             '@type': 'CollegeOrUniversity',
@@ -83,18 +82,9 @@ export const SEOHelper: React.FC<SEOHelperProps> = ({
             name: 'Webster University Geneva',
             sameAs: 'https://www.webster.ch',
           },
-          {
-            '@type': 'EducationalOrganization',
-            name: 'Monday Training Center',
-          },
         ],
-        sameAs: [
-          PERSONAL_INFO.linkedinUrl,
-          PERSONAL_INFO.telegramUrl,
-          PERSONAL_INFO.instagramUrl,
-          PERSONAL_INFO.githubUrl,
-        ],
-        knowsLanguage: ['Uzbek', 'Russian', 'English', 'Tajik', 'Spanish', 'French'],
+        sameAs: [PERSONAL_INFO.linkedinUrl, PERSONAL_INFO.githubUrl],
+        knowsLanguage: ['Uzbek', 'Tajik', 'English', 'Russian', 'Spanish', 'French'],
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Tashkent',
