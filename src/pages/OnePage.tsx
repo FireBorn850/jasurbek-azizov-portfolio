@@ -14,6 +14,7 @@ import {
   Languages as LanguagesIcon,
   CheckCircle2,
   Sparkles,
+  PenLine,
 } from 'lucide-react';
 import { SEOHelper } from '../components/SEOHelper';
 import {
@@ -344,6 +345,23 @@ export const OnePage: React.FC = () => {
             </li>
           ))}
         </ul>
+      </Section>
+
+      {/* Writing — placeholder until the first real article is published.
+          When it is ready: replace this card with a list of articles (title, date, 2-line summary, link). */}
+      <Section id="writing" title="Writing" icon={<PenLine className="w-6 h-6" />}>
+        <div className={`${card} p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-dashed`}>
+          <div className="space-y-1.5">
+            <p className="text-sm font-bold text-slate-100 light:text-slate-900">First article coming soon</p>
+            <p className="text-sm leading-relaxed text-slate-300 light:text-slate-700 max-w-2xl">
+              Short analyses on economics, international relations and business — written from a student’s perspective,
+              with data and clear conclusions.
+            </p>
+          </div>
+          <span className="shrink-0 px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-300 light:text-cyan-800 border border-cyan-500/30">
+            In progress
+          </span>
+        </div>
       </Section>
 
       {/* Languages & Activities */}

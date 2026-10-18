@@ -9,6 +9,11 @@ import { OnePage } from './pages/OnePage';
 
 const NotFoundPage = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFoundPage })));
 
+// NOTE: the previous multi-page version is kept, untouched, in src/pages/
+// (About, Experience, Projects, Investing, Certificates, Contact, Services, GenevaCard, Home)
+// and src/components/ (Navbar, Footer, ProjectCard, ...). They are simply not routed,
+// so visitors don't see them. To bring a page back, import it here and add a <Route>.
+//
 // The site is now a single page. Old addresses (shared links, printed QR codes)
 // jump to the matching section instead of breaking.
 const OLD_ROUTES: Record<string, string> = {

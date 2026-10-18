@@ -8,6 +8,7 @@ const LINKS = [
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
   { href: '#certificates', label: 'Certificates' },
+  { href: '#writing', label: 'Writing' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -28,7 +29,7 @@ export const SiteHeader: React.FC = () => {
           <span className="font-bold text-slate-100 light:text-slate-900">Jasurbek Azizov</span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {LINKS.map((l) => (
             <a
               key={l.href}
@@ -53,7 +54,7 @@ export const SiteHeader: React.FC = () => {
             onClick={() => setOpen(!open)}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
-            className="md:hidden p-2 rounded-lg bg-slate-900 light:bg-slate-100 border border-slate-800 light:border-slate-200 text-slate-200 light:text-slate-800 cursor-pointer"
+            className="lg:hidden p-2 rounded-lg bg-slate-900 light:bg-slate-100 border border-slate-800 light:border-slate-200 text-slate-200 light:text-slate-800 cursor-pointer"
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -61,7 +62,7 @@ export const SiteHeader: React.FC = () => {
       </div>
 
       {open && (
-        <nav className="md:hidden border-t border-slate-800 light:border-slate-200 bg-slate-950 light:bg-white px-4 py-3 grid grid-cols-2 gap-1">
+        <nav className="lg:hidden border-t border-slate-800 light:border-slate-200 bg-slate-950 light:bg-white px-4 py-3 grid grid-cols-2 gap-1">
           {LINKS.map((l) => (
             <a
               key={l.href}
