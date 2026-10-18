@@ -20,6 +20,21 @@ export const Home: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative pt-12 lg:pt-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] gap-10 lg:gap-14 items-center">
+        {/* Portrait */}
+        <figure className="order-first lg:order-last mx-auto lg:mx-0 w-48 sm:w-60 lg:w-full">
+          <div className="relative rounded-[28px] p-[2px] bg-gradient-to-br from-cyan-400 via-blue-600 to-emerald-400 shadow-2xl shadow-cyan-500/20">
+            <img
+              src="/images/jasurbek-azizov.jpg"
+              alt="Jasurbek Azizov"
+              width={630}
+              height={790}
+              fetchPriority="high"
+              className="block w-full aspect-[4/5] object-cover rounded-[26px] bg-slate-900"
+            />
+          </div>
+        </figure>
+
         <div className="space-y-8 max-w-4xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 dark:bg-cyan-500/10 light:bg-cyan-50 border border-cyan-500/30 text-cyan-400 dark:text-cyan-400 light:text-cyan-700 text-xs font-semibold tracking-wide">
@@ -114,6 +129,7 @@ export const Home: React.FC = () => {
               <span>Instagram</span>
             </a>
           </div>
+        </div>
         </div>
       </section>
 

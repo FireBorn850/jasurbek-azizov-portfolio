@@ -12,7 +12,7 @@ interface SEOHelperProps {
 export const SEOHelper: React.FC<SEOHelperProps> = ({
   title,
   description,
-  image = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop',
+  image = 'https://www.jasurbekazizov.com/og-image.jpg',
   type = 'website',
 }) => {
   const location = useLocation();
@@ -70,6 +70,7 @@ export const SEOHelper: React.FC<SEOHelperProps> = ({
         name: PERSONAL_INFO.name,
         jobTitle: PERSONAL_INFO.title,
         url: SITE_URL,
+        image: `${SITE_URL}/images/jasurbek-azizov.jpg`,
         email: PERSONAL_INFO.emailPrimary,
         telephone: PERSONAL_INFO.phonePrimary,
         alumniOf: [
