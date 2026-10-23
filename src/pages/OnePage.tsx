@@ -174,6 +174,12 @@ export const OnePage: React.FC = () => {
             </p>
           </div>
           <p className="text-base sm:text-lg leading-relaxed text-slate-300 light:text-slate-700 max-w-2xl">{INTRO}</p>
+          <figure className="border-l-2 border-cyan-500/60 pl-4 max-w-2xl">
+            <blockquote className="text-base sm:text-lg italic font-medium text-slate-200 light:text-slate-800">
+              “Don’t chase great people, chase to be one.”
+            </blockquote>
+            <figcaption className="mt-1 text-xs font-medium text-cyan-400 light:text-cyan-700">— Jasurbek Azizov</figcaption>
+          </figure>
           <div className="flex flex-wrap gap-3">
             <a
               href={PROFILE.cv}
